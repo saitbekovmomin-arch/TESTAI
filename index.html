@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BILIM PRO — Online Test</title>
+  <link rel="stylesheet" href="tailwind.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" onclick="goHome()">
+      <span class="logo-icon">B</span>
+      BILIM <span>PRO</span>
+    </a>
+    <div class="header-right">
+      <span class="online-dot"></span>
+      Online test platformasi
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="homeScreen">
+      <div class="hero">
+        <div class="hero-text">
+          <span class="eyebrow">BILIMINGNI SINAB KO‘R</span>
+          <h1>Bilimingni<br><span>yangi bosqichga</span> olib chiq.</h1>
+          <p>Fanlarni tanla, testni boshlagin va natijangni darhol bilib ol.</p>
+          <button class="primary-btn" onclick="scrollToTests()">Testni boshlash <span>→</span></button>
+        </div>
+        <div class="hero-art">
+          <div class="art-circle"></div>
+          <div class="book-card">
+            <div class="book-icon">📚</div>
+            <strong>Bilim — kelajak kaliti</strong>
+            <small>O‘rgan. Sinab ko‘r. Rivojlan.</small>
+            <div class="book-progress"><span></span></div>
+          </div>
+          <div class="floating-card">✦ 16 ta fan</div>
+          <div class="floating-card second">🎯 1–11-sinflar</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><strong>11</strong><span>Sinf</span></div>
+        <div><strong>16</strong><span>Fan</span></div>
+        <div><strong>100%</strong><span>Bepul test</span></div>
+      </div>
+
+      <section class="test-section" id="tests">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TEST MARKAZI</span>
+            <h2>Test uchun sinfni tanla</h2>
+            <p>Avval sinfingni, keyin fanni tanla.</p>
+          </div>
+        </div>
+
+        <div class="grade-grid" id="gradeGrid"></div>
+
+        <div id="subjectArea" class="subject-area hidden">
+          <div class="subject-heading">
+            <div>
+              <span class="eyebrow">FANLAR</span>
+              <h2><span id="selectedGrade">1</span>-sinf fanlari</h2>
+            </div>
+            <button class="back-btn" onclick="changeGrade()">← Sinfni almashtirish</button>
+          </div>
+          <div class="subject-grid" id="subjectGrid"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="quizScreen" class="quiz-screen hidden">
+      <div class="quiz-top">
+        <button class="back-btn" onclick="confirmExit()">← Chiqish</button>
+        <div class="quiz-meta">
+          <span id="quizGrade"></span>
+          <span id="quizSubject"></span>
+        </div>
+        <div class="timer" id="timer">05:00</div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-progress-info">
+          <span id="questionCount">Savol 1 / 5</span>
+          <span id="progressPercent">20%</span>
+        </div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+
+        <h2 id="questionText">Savol matni</h2>
+        <div id="answers" class="answers"></div>
+
+        <div class="quiz-bottom">
+          <span id="answerHint">Javobni tanlang</span>
+          <button class="primary-btn" id="nextBtn" onclick="nextQuestion()" disabled>
+            Keyingi savol →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="result-screen hidden">
+      <div class="result-card">
+        <div class="result-icon">🏆</div>
+        <span class="eyebrow">TEST YAKUNLANDI</span>
+        <h2>Barakalla!</h2>
+        <p>Test natijang tayyor.</p>
+        <div class="score-circle" id="scoreCircle">
+          <strong id="scorePercent">0%</strong>
+          <span>Natija</span>
+        </div>
+        <div class="result-details">
+          <div><strong id="correctCount">0</strong><span>To‘g‘ri</span></div>
+          <div><strong id="wrongCount">0</strong><span>Xato</span></div>
+          <div><strong id="totalCount">0</strong><span>Jami</span></div>
+        </div>
+        <p id="resultMessage" class="result-message"></p>
+        <div class="result-actions">
+          <button class="primary-btn" onclick="restartQuiz()">Qayta ishlash ↻</button>
+          <button class="secondary-btn" onclick="goHome()">Bosh sahifa</button>
+        </div>
+        <small class="not-saved">Natija saqlanmaydi. Testni qayta ishlashing mumkin.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo"><span class="logo-icon">B</span> BILIM <span>PRO</span></div>
+    <p>Bilim sari har bir qadam muhim.</p>
+    <small>© 2026 BILIM PRO</small>
+  </footer>
+</body>
+</html>
